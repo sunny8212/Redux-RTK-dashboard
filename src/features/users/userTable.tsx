@@ -89,7 +89,19 @@ export default function UserTable() {
         </Button>
       </Box>
 
-      <TableContainer component={Paper} sx={{ overflowX: 'auto' }}>
+      <TableContainer component={Paper}
+        sx={{
+          borderRadius: 4, 
+          paddingLeft: 7,
+          overflow: "hidden", 
+          boxShadow: "0px 6px 24px rgba(0,0,0,0.15)", 
+          backdropFilter: "blur(6px)", 
+          backgroundColor: (theme) =>
+            theme.palette.mode === "dark"
+              ? "rgba(255, 255, 255, 0.05)"
+              : "rgba(195, 197, 198, 0.9)",
+          transition: "all 0.3s ease",
+        }}>
         <Table>
           <TableHead>
             <TableRow>

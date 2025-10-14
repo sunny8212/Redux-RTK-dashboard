@@ -19,29 +19,62 @@ function Root() {
   };
 
   const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-          ...(mode === "light"
-            ? {
-                background: { default: "#bebebeff", paper: "#989898ff" },
-                primary: { main: "#0b5db0ff" },
-                text: { primary: "#1e1e1e" },
-              }
-            : {
-                background: { default: "#0a0a0a", paper: "#161616" },
-                primary: { main: "#0b62a9ff" },
-                text: { primary: "#ffffff" },
-              }),
+  () =>
+    createTheme({
+      palette: {
+        mode,
+        ...(mode === "dark"
+          ? {
+              background: {
+                default: "#0a0a0a",
+                paper: "#111113",
+              },
+              text: {
+                primary: "#fafafa",
+                secondary: "#a1a1aa",
+              },
+              primary: { main: "#6366f1" }, // Indigo tint like shadcn
+              divider: "rgba(255,255,255,0.08)",
+            }
+          : {
+              background: {
+                default: "#d9d9d9ff",
+                paper: "#ffffff",
+              },
+              text: {
+                primary: "#111",
+                secondary: "#444",
+              },
+              primary: { main: "#2563eb" }, // blue-600
+              divider: "rgba(0,0,0,0.08)",
+            }),
+      },
+      shape: { borderRadius: 12 },
+      typography: {
+        fontFamily: "'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+      },
+      components: {
+        MuiPaper: {
+          styleOverrides: {
+            root: {
+              backgroundImage: "none",
+              borderRadius: 16,
+              transition: "background-color 0.3s ease, color 0.3s ease",
+            },
+          },
         },
-        typography: {
-          fontFamily: "'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+        MuiTableCell: {
+          styleOverrides: {
+            root: {
+              borderBottom: "1px solid rgba(255,255,255,0.05)",
+            },
+          },
         },
-        shape: { borderRadius: 10 },
-      }),
-    [mode]
-  );
+      },
+    }),
+  [mode]
+);
+
 
   return (
     <Provider store={store}>
