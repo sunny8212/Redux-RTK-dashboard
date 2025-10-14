@@ -70,7 +70,7 @@ src/
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/sunny8212/user-dashboard.git
+git clone [https://github.com/sunny8212/user-dashboard.git](https://github.com/sunny8212/Redux-RTK-dashboard.git)
 cd user-dashboard
 ### 2️⃣ Install dependencies
 
