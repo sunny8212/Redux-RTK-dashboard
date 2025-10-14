@@ -1,50 +1,48 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Tooltip, Box } from '@mui/material';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Tooltip,
+  Box,
+  Switch,
+} from "@mui/material";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { motion } from 'framer-motion';
 
-export default function TopBar() {
-  const [darkMode, setDarkMode] = React.useState(true);
-
+export default function TopBar({ toggleTheme, mode }) {
   return (
     <AppBar
       position="sticky"
       sx={{
-        background: darkMode
-          ? 'linear-gradient(90deg, #1976d2, #2196f3)'
-          : 'linear-gradient(90deg, #42a5f5, #90caf9)',
+        background:
+          mode === "dark"
+            ? "linear-gradient(90deg, #1976d2, #42a5f5)"
+            : "linear-gradient(90deg, #90caf9, #2196f3)",
         boxShadow: 3,
       }}
     >
-      <Toolbar
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-          <Typography variant="h6" fontWeight={600}>
-            User Dashboard
-          </Typography>
-        </motion.div>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Typography variant="h6" fontWeight={600}>
+          User Dashboard
+        </Typography>
 
         <Box display="flex" alignItems="center" gap={1}>
-          <Tooltip title="Refresh Page">
-            <IconButton color="inherit" onClick={() => window.location.reload()}>
-              <RefreshIcon />
-            </IconButton>
-          </Tooltip>
-
-          <Tooltip title="GitHub Repo">
-            <IconButton color="inherit" onClick={() => window.open('https://github.com/sunny8212/Redux-RTK-dashboard#', '_blank')}>
-              <GitHubIcon />
-            </IconButton>
-          </Tooltip>
-
-          
+          <>
+          <Tooltip title="Visit GitHub Repo">
+              <IconButton color="inherit" onClick={() => window.open('https://github.com/sunny8212/Redux-RTK-dashboard', '_blank')}>
+                <GitHubIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Toggle theme">
+              <IconButton color="inherit" onClick={toggleTheme}>
+                {mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+              </IconButton>
+            </Tooltip>
+            
+          </>
         </Box>
       </Toolbar>
     </AppBar>
