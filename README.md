@@ -45,24 +45,24 @@ This project demonstrates CRUD operations (Create, Read, Update, Delete) with re
 ```bash
 src/
 ├── app/
-│ ├── store.ts
+│     ├── store.ts
 │
 ├── components/
-│ ├── TopBar.tsx
+│    ├── TopBar.tsx
 │
 ├── features/
-│ └── users/
-│ ├── UserTable.tsx
-│ ├── AddUserDialog.tsx
-│ ├── EditUserDialog.tsx
-│ ├── usersApi.ts
+│    └── users/
+│       ├── UserTable.tsx
+│       ├── AddUserDialog.tsx
+│       ├── EditUserDialog.tsx
+│       ├── usersApi.ts
 │
 ├── features/ui/
-│ └── uiSlice.ts
+│       └── uiSlice.ts
 │
 ├── App.tsx
 └── main.tsx
-
+```
 
 ---
 
