@@ -42,7 +42,7 @@ This project demonstrates CRUD operations (Create, Read, Update, Delete) with re
 ---
 
 ## 📂 Project Structure
-
+```bash
 src/
 ├── app/
 │ ├── store.ts
@@ -69,15 +69,15 @@ src/
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
-```bash
+
 git clone https://github.com/yourusername/user-dashboard.git
 cd user-dashboard
 ### 2️⃣ Install dependencies
-```bash
+
 pnpm install
 
 ### 3️⃣ Run the development server
-```bash
+
 pnpm dev
 
 
