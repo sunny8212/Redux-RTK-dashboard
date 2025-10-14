@@ -39,16 +39,12 @@ export default function TopBar() {
           </Tooltip>
 
           <Tooltip title="GitHub Repo">
-            <IconButton color="inherit" onClick={() => window.open('https://github.com/sunny8212', '_blank')}>
+            <IconButton color="inherit" onClick={() => window.open('https://github.com/sunny8212/Redux-RTK-dashboard#', '_blank')}>
               <GitHubIcon />
             </IconButton>
           </Tooltip>
 
-          <Tooltip title="Toggle Theme (Mock)">
-            <IconButton color="inherit" onClick={() => setDarkMode(!darkMode)}>
-              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </Tooltip>
+          
         </Box>
       </Toolbar>
     </AppBar>

@@ -27,7 +27,8 @@ export const usersApi = createApi({
         const patch = dispatch(
           usersApi.util.updateQueryData('getUsers', undefined, (draft) => {
             const id = Math.floor(Math.random() * 10000);
-            draft.push({ id, ...arg });
+            // 🟢 Add new user at the TOP
+            draft.unshift({ id, ...arg });
           })
         );
         try {
@@ -37,6 +38,7 @@ export const usersApi = createApi({
         }
       },
     }),
+
 
     updateUser: builder.mutation<User, User>({
       query: ({ id, ...body }) => ({
