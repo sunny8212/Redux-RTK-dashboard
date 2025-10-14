@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# 🧑‍💻 User Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive, dynamic, and theme-aware **User Management Dashboard** built using **React.js**, **Redux Toolkit**, **RTK Query**, and **Material UI (MUI)**.  
+This project demonstrates CRUD operations (Create, Read, Update, Delete) with real-time API integration, interactive UI, and persistent light/dark mode — all designed with clean code and scalability in mind.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 🧩 Core Functionalities
+- ✅ **Fetch & display users** from a public API using RTK Query
+- ✅ **Add new user** through a responsive dialog form
+- ✅ **Edit user** with instant updates and live UI sync
+- ✅ **Delete user** with confirmation popup
+- ✅ **Search bar** for instant filtering by name or username
+- ✅ **Real-time updates** with optimistic UI and cache invalidation
+- ✅ **Error handling & loading states** for a professional experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+### 🎨 UI / UX Highlights
+- 🌗 **Global theme toggle (Dark/Light)** — works across the entire app
+- 🧱 Built with **Material UI 6** for modern responsive design
+- ✨ **Hover animations & transitions** for smooth interactions
+- 📱 **Fully responsive layout** — optimized for laptop, tablet, and mobile
+- 💾 **LocalStorage persistence** for theme preference
+- 🧠 **Custom MUI theme** with consistent typography and colors
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏗️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category | Technology |
+|-----------|-------------|
+| **Frontend** | React.js (Vite + pnpm) |
+| **State Management** | Redux Toolkit + RTK Query |
+| **UI Framework** | Material UI (MUI v6) |
+| **Animations** | Framer Motion |
+| **Package Manager** | pnpm |
+| **API Source** | JSONPlaceholder (mock REST API) |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📂 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
+├── app/
+│ ├── store.ts
+│
+├── components/
+│ ├── TopBar.tsx
+│
+├── features/
+│ └── users/
+│ ├── UserTable.tsx
+│ ├── AddUserDialog.tsx
+│ ├── EditUserDialog.tsx
+│ ├── usersApi.ts
+│
+├── features/ui/
+│ └── uiSlice.ts
+│
+├── App.tsx
+└── main.tsx
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/yourusername/user-dashboard.git
+cd user-dashboard
+### 2️⃣ Install dependencies
+```bash
+pnpm install
+
+### 3️⃣ Run the development server
+```bash
+pnpm dev
+
+
+Visit 👉 http://localhost:5173/
+
+
+
