@@ -1,5 +1,6 @@
 # 🧑‍💻 User Management Dashboard
 
+Live URL: https://redux-rtk-dashboard.vercel.app/
 A fully responsive, dynamic, and theme-aware **User Management Dashboard** built using **React.js**, **Redux Toolkit**, **RTK Query**, and **Material UI (MUI)**.  
 This project demonstrates CRUD operations (Create, Read, Update, Delete) with real-time API integration, interactive UI, and persistent light/dark mode — all designed with clean code and scalability in mind.
 
