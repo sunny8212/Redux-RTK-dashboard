@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
+import { Analytics } from "@vercel/analytics/react";
 import TopBar from "./components/TopBar";
 import UserTable from "./features/users/userTable";
 
@@ -40,6 +41,8 @@ export default function App({ toggleTheme, mode }: AppProps) {
           <UserTable />
         </Box>
       </Container>
+      {/* Vercel Analytics (only active in production on Vercel) */}
+      <Analytics />
     </Box>
   );
 }
