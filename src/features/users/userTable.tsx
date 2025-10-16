@@ -8,6 +8,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  Typography,
   TableContainer,
   TableHead,
   TableRow,
@@ -105,7 +106,7 @@ export default function UserTable() {
           transition: 'all 0.3s ease',
         })}
       >
-        <Table>
+        <Table sx={{pb: 10,}}>
           <TableHead>
             <TableRow>
               <TableCell><strong>Name</strong></TableCell>
@@ -133,6 +134,13 @@ export default function UserTable() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      {/* Footer showing total records */}
+      <Box mt={1} mb={3} display="flex" justifyContent="center" sx={{ px: isSmall ? 1 : 4, width: '100%' }}>
+        <Typography variant="body2" color="text.secondary" textAlign="center">
+          Showing {filtered.length} of {users ? users.length : 0} records
+        </Typography>
+      </Box>
 
       <UserDialog open={openDialog} onClose={() => setOpenDialog(false)} editing={editing} />
       <ConfirmDialog
