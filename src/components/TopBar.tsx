@@ -12,7 +12,12 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-export default function TopBar({ toggleTheme, mode }) {
+type TopBarProps = {
+  toggleTheme: () => void;
+  mode: 'light' | 'dark' | string;
+};
+
+export default function TopBar({ toggleTheme, mode }: TopBarProps) {
   return (
     <AppBar
       position="sticky"
@@ -22,6 +27,7 @@ export default function TopBar({ toggleTheme, mode }) {
             ? "linear-gradient(90deg, #1976d2, #42a5f5)"
             : "linear-gradient(90deg, #90caf9, #2196f3)",
         boxShadow: 3,
+        borderRadius: 0,
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
